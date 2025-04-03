@@ -1,10 +1,11 @@
-/* Reset & Base */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* BODY & CONTAINER */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
@@ -18,14 +19,44 @@ body {
     margin: 0 auto;
 }
 
-/* Header & Navigation */
+/* TOP BLACK BAR */
+.top-bar {
+    background-color: #000;
+    color: #fff;
+    height: 52px;
+    display: flex;
+    align-items: center;
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 52px;
+}
+
+.top-bar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 0.95em;
+}
+
+    .top-bar a:hover {
+        text-decoration: underline;
+    }
+
+.map-icon {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* HEADER & NAVIGATION */
 header {
     background: #333;
     color: #fff;
-    position: fixed;
+    position: relative;
     width: 100%;
-    top: 0;
-    z-index: 1000;
 }
 
 .header-container {
@@ -42,10 +73,12 @@ header h1 {
 nav ul {
     list-style: none;
     display: flex;
+    position: relative;
 }
 
     nav ul li {
         margin: 0 15px;
+        position: relative;
     }
 
         nav ul li a {
@@ -55,10 +88,52 @@ nav ul {
             transition: color 0.3s;
         }
 
-            nav ul li a:hover, nav ul li a.active {
+            nav ul li a:hover,
+            nav ul li a.active {
                 color: #ff6b00;
             }
 
+        /* SUBMENU */
+        nav ul li .submenu {
+            cursor: pointer;
+        }
+
+        /* SUBMENU */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background: #333;
+            list-style: none;
+            top: 100%; /* Positions the submenu directly under the parent */
+            left: 0;
+            padding: 10px 0;
+            border-radius: 4px;
+            min-width: 150px; /* Increase width if needed */
+            z-index: 10;
+        }
+
+            nav ul li:hover ul,
+            nav ul li ul:hover {
+                display: block;
+            }
+
+
+        nav ul li ul li {
+            margin: 0;
+            padding: 5px 15px;
+        }
+
+            nav ul li ul li a {
+                color: #fff;
+                display: block;
+                width: 100%;
+            }
+
+                nav ul li ul li a:hover {
+                    background: #444;
+                }
+
+/* HAMBURGER (MOBILE) */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -75,16 +150,15 @@ nav ul {
         border-radius: 3px;
     }
 
-/* Hero Section */
+/* HERO SECTION (Reduced Height) */
 .hero {
-    height: 100vh;
+    height: 70vh;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 60px;
 }
 
     .hero::after {
@@ -126,7 +200,7 @@ nav ul {
         background: #e05b00;
     }
 
-/* Sections */
+/* SECTION */
 .section {
     padding: 80px 0;
 }
@@ -145,7 +219,7 @@ nav ul {
         font-size: 1.1em;
     }
 
-/* Product Carousel (Cards) */
+/* PRODUCT CAROUSEL */
 .product-carousel {
     position: relative;
     overflow: hidden;
@@ -181,7 +255,7 @@ nav ul {
         padding: 10px;
     }
 
-/* Carousel Buttons */
+/* CAROUSEL BUTTONS */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -190,7 +264,7 @@ nav ul {
     border: none;
     color: #fff;
     font-size: 2em;
-    padding: 10px;
+    padding: 5px 10px;
     cursor: pointer;
     z-index: 2;
 }
@@ -203,7 +277,7 @@ nav ul {
         right: 10px;
     }
 
-/* Services Grid */
+/* SERVICES */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -224,7 +298,7 @@ nav ul {
         transform: translateY(-5px);
     }
 
-/* Testimonials Grid */
+/* TESTIMONIALS */
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -250,15 +324,16 @@ nav ul {
         font-weight: normal;
     }
 
-/* Contact Form */
-#contact form {
+/* CONTACT FORM */
+#contactForm {
     max-width: 600px;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
 }
 
-    #contact form input, #contact form textarea {
+    #contactForm input,
+    #contactForm textarea {
         padding: 10px;
         margin: 10px 0;
         border: 1px solid #ccc;
@@ -266,7 +341,7 @@ nav ul {
         font-size: 1em;
     }
 
-    #contact form button {
+    #contactForm button {
         padding: 10px;
         border: none;
         background: #333;
@@ -277,7 +352,7 @@ nav ul {
         transition: background 0.3s;
     }
 
-        #contact form button:hover {
+        #contactForm button:hover {
             background: #555;
         }
 
@@ -287,7 +362,7 @@ nav ul {
     font-size: 1.1em;
 }
 
-/* Back to Top Button */
+/* BACK TO TOP BUTTON */
 #back-to-top {
     position: fixed;
     bottom: 30px;
@@ -308,7 +383,7 @@ nav ul {
         background: #e05b00;
     }
 
-/* Footer */
+/* FOOTER */
 footer {
     background: #333;
     color: #fff;
@@ -337,7 +412,7 @@ footer {
                     color: #ff6b00;
                 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -350,6 +425,10 @@ footer {
 
     .hamburger {
         display: flex;
+    }
+
+    .hero {
+        height: 70vh;
     }
 
     .hero-content h2 {

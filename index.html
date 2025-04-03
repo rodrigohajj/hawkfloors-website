@@ -14,13 +14,13 @@
           "@type": "HomeAndConstructionBusiness",
           "name": "Hawk Floors",
           "image": "https://luxwoodfloors.com/cdn/shop/products/MadridEuropeanOakModernEngineeredWoodFlooring1_688x500.jpg?v=1629095787",
-          "telephone": "+1-555-555-5555",
+          "telephone": "999 9999 9999",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "123 Wood Street",
-            "addressLocality": "Floor City",
-            "addressRegion": "FS",
-            "postalCode": "12345",
+            "streetAddress": "225 N Monroe St",
+            "addressLocality": "Olathe",
+            "addressRegion": "KS",
+            "postalCode": "66061",
             "addressCountry": "US"
           },
           "url": "https://www.hawkfloors.com",
@@ -29,16 +29,38 @@
     </script>
 </head>
 <body>
+    <!-- Top Black Bar with Map Icon -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <a class="address-link" href="https://www.google.com/maps/search/?api=1&query=225+N+Monroe+St,+Olathe,+KS+66061" target="_blank">
+                <!-- Inline SVG Map Icon -->
+                <svg class="map-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0a5 5 0 0 0-5 5c0 5.25 5 11 5 11s5-5.75 5-11a5 5 0 0 0-5-5zm0 7.5A2.5 2.5 0 1 1 8 2a2.5 2.5 0 0 1 0 5.5z" />
+                </svg>
+                225 N Monroe St, Olathe, KS 66061
+            </a>
+            <a class="phone-link" href="tel:9999999999">999 9999 9999</a>
+        </div>
+    </div>
+
+    <!-- Header with Navigation -->
     <header role="banner">
         <div class="container header-container">
             <h1>Hawk Floors</h1>
             <nav role="navigation">
                 <ul>
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#products" class="nav-link">Products</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                    <li class="submenu">
+                        <a href="#">Shop Our Products</a>
+                        <ul>
+                            <li><a href="hardwood.html">Hardwood</a></li>
+                            <li><a href="vinyl.html">Luxury Vinyl</a></li>
+                            <li><a href="carpet.html">Carpet</a></li>
+                            <li><a href="laminate.html">Laminate</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -50,7 +72,9 @@
         </div>
     </header>
 
+    <!-- Main Content -->
     <main>
+        <!-- Hero Section -->
         <section id="home" class="section hero" style="background-image: url('https://luxwoodfloors.com/cdn/shop/products/MadridEuropeanOakModernEngineeredWoodFlooring1_688x500.jpg?v=1629095787');">
             <div class="hero-content container">
                 <h2>Quality Wood Flooring &amp; More</h2>
@@ -59,6 +83,7 @@
             </div>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="section">
             <div class="container">
                 <h2>About Us</h2>
@@ -66,6 +91,7 @@
             </div>
         </section>
 
+        <!-- Products Section -->
         <section id="products" class="section">
             <div class="container">
                 <h2>Our Products</h2>
@@ -104,6 +130,7 @@
             </div>
         </section>
 
+        <!-- Services Section -->
         <section id="services" class="section">
             <div class="container">
                 <h2>Services</h2>
@@ -124,6 +151,7 @@
             </div>
         </section>
 
+        <!-- Testimonials Section -->
         <section id="testimonials" class="section">
             <div class="container">
                 <h2>What Our Clients Say</h2>
@@ -144,6 +172,7 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="container">
                 <h2>Contact Us</h2>
@@ -159,8 +188,10 @@
         </section>
     </main>
 
+    <!-- Back to Top Button -->
     <button id="back-to-top" aria-label="Back to Top">&#8679;</button>
 
+    <!-- Footer -->
     <footer role="contentinfo">
         <div class="container">
             <p>&copy; 2024 Hawk Floors. All rights reserved.</p>
@@ -170,6 +201,7 @@
             </ul>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
